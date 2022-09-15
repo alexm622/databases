@@ -7,8 +7,8 @@ on_exit(){
 
 	docker-compose down
 
-	message="\"updated db $(date)\""
-	echo $message
+	MESSAGE="\"updated db $(date)\""
+	echo $MESSAGE
 
 	sudo chmod -R 777 data/
 
@@ -17,6 +17,9 @@ on_exit(){
 
 	echo gzipping
 	gzip -fv data.tar
+
+	echo "committing changes"
+	git commit -am "$(echo $MESSAGE)"
 
 
 
