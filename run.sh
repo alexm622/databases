@@ -21,6 +21,9 @@ on_exit(){
 	echo "committing changes"
 	git commit -am "$(echo $MESSAGE)"
 
+	echo "pushing"
+	git push
+
 
 
 	kill -- $$
