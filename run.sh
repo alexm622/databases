@@ -49,6 +49,10 @@ else
 	unpack
 fi
 
+
+echo "updating from git"
+git pull -f
+
 echo "starting containers"
 trap on_exit SIGINT SIGTERM
 docker-compose up
